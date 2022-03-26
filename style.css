@@ -8,6 +8,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 button {
   background-color: #005CC8;
   border: none;
