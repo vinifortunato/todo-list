@@ -12,10 +12,13 @@
   <body>
     <header class="header">
       <div class="menu">
-        <button class="menu-button">Menu</button>
-        <p class="menu-item">Login</p>
-        <p class="menu-item">Cadastre-se</p>
-        <p class="menu-item">Ajuda</p>
+        <button class="menu-button" onclick="toggleSideMenu()">Menu</button>
+        <p class="menu-item" onclick="toggleNewTaskPopUp()">Nova Tarefa</p>
+        <a class="menu-item" href="https://github.com/vinesky/todo-list" target="_blank">GitHub</a>
+      </div>
+      <div id="side-menu" class="side-menu">
+        <p class="side-menu-item" onclick="toggleNewTaskPopUp()">Nova Tarefa</p>
+        <a class="side-menu-item" href="https://github.com/vinesky/todo-list" target="_blank">GitHub</a>
       </div>
       <h1 class="header-title">TO DO</h1>
       <a class="header-github-link" href="https://github.com/vinesky/todo-list" target="_blank">GitHub</a>

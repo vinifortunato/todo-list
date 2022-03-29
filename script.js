@@ -1,9 +1,11 @@
 const newTaskForm = document.getElementById('new-task-form');
 const tasksList = document.getElementById('tasks-list');
 const newTaskPopUp = document.getElementById('new-task-popup');
+const sideMenu = document.getElementById('side-menu');
 
 let tasks = [];
 let showNewTaskPopUp = false;
+let showSideMenu = false;
 
 const clearListView = () => {
   const children = [...tasksList.children];
@@ -13,7 +15,6 @@ const clearListView = () => {
 }
 
 const updateListView = () => {
-  console.log('updateListView', tasks);
   clearListView();
 
   tasks.forEach((task) => {
@@ -129,7 +130,20 @@ const handleKeyDown = (event) => {
 
 document.addEventListener('keydown', handleKeyDown);
 
+const toggleSideMenu = () => {
+  showSideMenu = !showSideMenu;
 
+  if (showSideMenu) {
+    sideMenu.classList.add('side-menu-open');
+  } else {
+    sideMenu.classList.remove('side-menu-open');
+  }
+}
 
+const handleResize = () => {
+  if (window.innerWidth >= 922 && showSideMenu) {
+    toggleSideMenu();
+  }
+}
 
-
+window.addEventListener('resize', handleResize);
